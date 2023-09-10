@@ -1,0 +1,38 @@
+---
+import Cabecalho from '../components/Cabecalho.astro';
+import Rodape from '../components/Rodape.astro';
+import '../styles/global.css';
+const {tituloPagina} = Astro.props
+const corHabilidade = '#23238E';
+const espessuraFonte = 'bold';
+const capitalizacaoTexto = 'uppercase';
+---
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <title>{tituloPagina}</title>
+    <style define:vars={{corHabilidade, espessuraFonte, capitalizacaoTexto}}>
+        h1 {
+          color: purple;
+          font-size: 4rem;
+        }
+        .habilidade {
+          color: var(--corHabilidade);
+          font-weight: var(--espessuraFonte);
+          text-transform: var(--capitalizacaoTexto);
+        }
+      </style>
+  </head>
+  <body>
+    <Cabecalho />
+    <h1>{tituloPagina}</h1>
+    <slot />
+    <Rodape />
+    <script>
+        import "../scripts/menu.js";
+    </script>
+  </body>
+</html>

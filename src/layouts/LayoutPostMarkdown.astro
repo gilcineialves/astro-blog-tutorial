@@ -1,0 +1,16 @@
+---
+import LayoutBase from './LayoutBase.astro'
+const { frontmatter } = Astro.props;
+---
+
+<LayoutBase tituloPagina={frontmatter.titulo}>
+    <h4>{frontmatter.descricao}</h4>
+    <p>Publicado em: {frontmatter.dataPub.slice(0, 10)}</p>
+    <p>Escrito por {frontmatter.autor}</p>
+    <ul>
+      {frontmatter.tags.map((tag: unknown) => <li>{tag}</li>)}
+    </ul>
+    <img src={frontmatter.imagem.url} width="600" alt={frontmatter.imagem.alt} />
+    <slot />
+    
+</LayoutBase>

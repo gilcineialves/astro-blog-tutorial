@@ -1,21 +1,9 @@
 ---
-import '../styles/global.css';
-import Rodape from '../components/Rodape.astro';
-import Cabecalho from '../components/Cabecalho.astro';
-const tituloPagina = 'Página Inicial';
+import LayoutBase from "../layouts/LayoutBase.astro";
+import "../styles/global.css";
+const tituloPagina = "Página Inicial";
 ---
 
-<html lang="pt-br">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>{tituloPagina}</title>
-	</head>
-	<body>
-		<Cabecalho/>
-		<h1>Hello World!</h1>
-		<Rodape/>
-	</body>
-</html>
+<LayoutBase tituloPagina={tituloPagina}>
+  <h2>O substituto incrivel do meu blog</h2>
+</LayoutBase>

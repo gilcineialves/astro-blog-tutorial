@@ -1,4 +1,5 @@
 ---
+import '../styles/global.css';
 const tituloPagina = "Sobre Mim";
 
 const identidade = {
@@ -13,6 +14,9 @@ const habilidades = ["HTML", "CSS", "JavaScript", "Vue", "Astro"];
 const feliz = true;
 const terminado = false;
 const meta = 3;
+const corHabilidade = '#23238E';
+const espessuraFonte = 'bold';
+const capitalizacaoTexto = 'uppercase';
 ---
 
 <html lang="pt-br">
@@ -22,6 +26,17 @@ const meta = 3;
     <meta name="viewport" content="width=device-width" />
     <meta name="generator" content={Astro.generator} />
     <title>{tituloPagina}</title>
+    <style define:vars={{corHabilidade, espessuraFonte, capitalizacaoTexto}}>
+      h1 {
+        color: purple;
+        font-size: 4rem;
+      }
+      .habilidade {
+        color: var(--corHabilidade);
+        font-weight: var(--espessuraFonte);
+        text-transform: var(--capitalizacaoTexto);
+      }
+    </style>
   </head>
   <body>
     <a href="/">Inicio</a>
@@ -57,7 +72,11 @@ const meta = 3;
     </ul>
     <p>Minhas habilidades são:</p>
     <ul>
-      {habilidades.map((habilidade) => <li>{habilidade}</li>)}
+      {
+        habilidades.map((habilidade) => (
+          <li class="habilidade">{habilidade}</li>
+        ))
+      }
     </ul>
     {feliz && <p>Estou feliz em estar aprendendo Astro!</p>}
 

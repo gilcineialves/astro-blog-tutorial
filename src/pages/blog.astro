@@ -1,15 +1,23 @@
+---
+const tituloPagina = 'Meu Blog de Aprendizado sobre Astro';
+---
 <html lang="pt-br">
   <head>
     <meta charset="utf-8" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width" />
     <meta name="generator" content={Astro.generator} />
-    <title>Blog</title>
+    <title>{tituloPagina}</title>
   </head>
   <body>
     <a href="/">Inicio</a>
     <a href="/sobre">Sobre mim</a>
-    <h1>Meu Blog de Aprendizado sobre Astro</h1>
+    <h1>{tituloPagina}</h1>
     <p>Aqui é onde postarei sobre minha jornada aprendendo Astro.</p>
+    <ul>
+        <li><a href="/postagens/post-1">Postagem 1</a></li>
+        <li><a href="/postagens/post-2/">Postagem 2</a></li>
+        <li><a href="/postagens/post-3/">Postagem 3</a></li>
+    </ul>
   </body>
 </html>

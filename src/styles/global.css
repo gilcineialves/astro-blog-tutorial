@@ -19,3 +19,49 @@ h1 {
     margin: 1rem 0;
     font-size: 2.5rem;
 }
+
+/* estilos da navegação */
+
+.links-nav {
+    width: 100%;
+    top: 5rem;
+    left: 48px;
+    background-color: #ff9776;
+    display: none;
+    margin: 0;
+}
+
+.links-nav a {
+    display: block;
+    text-align: center;
+    padding: 10px 0;
+    text-decoration: none;
+    font-size: 1.2rem;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.links-nav a:hover,
+.links-nav a:focus {
+    background-color: #ff9776;
+}
+
+.expandido {
+    display: unset;
+}
+
+@media screen and (min-width: 636px) {
+    .links-nav {
+        margin-left: 5em;
+        display: block;
+        position: static;
+        width: auto;
+        background: none;
+    }
+
+    .links-nav a {
+        display: inline-block;
+        padding: 15px 20px;
+    }
+
+}

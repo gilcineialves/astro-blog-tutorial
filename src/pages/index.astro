@@ -1,5 +1,7 @@
 ---
 import '../styles/global.css';
+import Rodape from '../components/Rodape.astro';
+import Cabecalho from '../components/Cabecalho.astro';
 const tituloPagina = 'Página Inicial';
 ---
 
@@ -12,9 +14,8 @@ const tituloPagina = 'Página Inicial';
 		<title>{tituloPagina}</title>
 	</head>
 	<body>
-		<h1>{tituloPagina}</h1>
-		<a href="/sobre">Sobre mim</a>
-		<a href="/blog">Blog</a>
+		<Cabecalho/>
 		<h1>Hello World!</h1>
+		<Rodape/>
 	</body>
 </html>

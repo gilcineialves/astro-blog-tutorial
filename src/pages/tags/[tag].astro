@@ -1,0 +1,24 @@
+---
+import PostBlog from '../../components/PostBlog.astro';
+import LayoutBase from '../../layouts/LayoutBase.astro';
+export async function getStaticPaths() {
+    const todasPostagens = await Astro.glob('../postagens/*.md');
+    const tagsUnicas = [...new Set(todasPostagens.map((post) => post.frontmatter.tags).flat())];
+    return tagsUnicas.map(tag=> {
+        const postagensFiltradas = todasPostagens.filter(post=> post.frontmatter.tags?.includes(tag));
+        return {
+            params: { tag },
+            props: { posts: postagensFiltradas }
+        }
+    })
+}
+const { tag } = Astro.params;
+const { posts } = Astro.props;
+---
+
+<LayoutBase tituloPagina={tag[0].toUpperCase() + tag.substring(1)}>
+     <p>Postagens com a tag {tag}</p>
+     <ul>
+        {posts.map((post) => <PostBlog url={post.url} titulo={post.frontmatter.title}/>)}
+     </ul>
+</LayoutBase>

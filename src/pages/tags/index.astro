@@ -1,0 +1,12 @@
+---
+import LayoutBase from "../../layouts/LayoutBase.astro";
+const todasPostagens = await Astro.glob('../postagens/*.md');
+const tags = [...new Set(todasPostagens.map(post => post.frontmatter.tags).flat())]
+const tituloPagina = "Índice de Tags";
+---
+
+<LayoutBase tituloPagina={tituloPagina}>
+ <div class="tags">
+    {tags.map(tag => <p class="tag"><a href={`/tags/${tag}`}>{tag[0].toUpperCase() + tag.substring(1)}</a></p>)}
+ </div>
+</LayoutBase>

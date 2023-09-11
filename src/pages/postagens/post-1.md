@@ -1,13 +1,13 @@
 ---
 layout: ../../layouts/LayoutPostMarkdown.astro
-titulo: 'Minha Primeira Postagem no Blog'
-dataPub: 2022-07-01
-descricao: 'Esta é a primeira postagem do meu novo blog Astro.'
-autor: 'Aluno de Astro'
-imagem:
+title: 'Minha Primeira Postagem no Blog'
+pubDate: 2022-07-01
+description: 'Esta é a primeira postagem do meu novo blog Astro.'
+author: 'Aluno de Astro'
+image:
     url: 'https://docs.astro.build/assets/full-logo-light.png'
     alt: 'A logo completa do Astro.'
-tags: ["astro", "blogueirando", "aprendendo em público"]
+tags: ["astro", "blogueirando", "aprendendo em publico"]
 ---
 # Minha Primeira Postagem no Blog
 

@@ -1,4 +1,5 @@
 ---
+import Saudacao from "../components/Saudacao";
 import LayoutBase from "../layouts/LayoutBase.astro";
 import "../styles/global.css";
 const tituloPagina = "Página Inicial";
@@ -6,4 +7,6 @@ const tituloPagina = "Página Inicial";
 
 <LayoutBase tituloPagina={tituloPagina}>
   <h2>O substituto incrivel do meu blog</h2>
+  <Saudacao client:load mensagens={['Oi', 'Olá', 'Coé', 'E ai']}/>
+
 </LayoutBase>
